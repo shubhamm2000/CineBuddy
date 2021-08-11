@@ -19,16 +19,26 @@ def get_movie():
         name = str(myDict['name'])
         array = []
         array = Recommendations(name)
-        print(array)
-    # if request.method=="GET":    
+        # print(array)
         for movie in array:
+            print(movie)
             query = 'https://api.themoviedb.org/3/search/movie?api_key='+api_key+'&query='+movie+''
             response = requests.get(query)
-            if(response.status_code == 200):
-                array1 = response.json()
-                text = json.dumps(array1)
-                print(text)
-    return render_template("index.html")
+            array1 = response.json()
+            print(array1)
+            data = json.loads(response.content)
+            return render_template('index.html', data = data['results'])
+    # return render_template("index.html")
+
+# @app.route('/', methods=["GET","POST"])
+# def print_movie():
+#     if request.method=="GET":    
+#         for movie in array:
+#             query = 'https://api.themoviedb.org/3/search/movie?api_key='+api_key+'&query='+movie+''
+#             response = requests.get(query)
+#             data = json.loads(response.content)
+#         return render_template('index.html', data = data['all'])
+
 
 
 if __name__ == "__main__":

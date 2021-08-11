@@ -5,8 +5,16 @@
      <meta charset="UTF-8">
      <meta http-equiv="X-UA-Compatible" content="IE=edge">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel= "stylesheet" href="{{url_for('static', filename='style.css')}}">
      <title>Document</title>
-     <link rel= "stylesheet" type= "text/css" href= "/static/styles/style.css">
+     <style type="text/css">
+        body {          
+            min-height: 100%;
+            background: url("{{ url_for('static', filename='netflix-background.jpg') }}") no-repeat center center fixed;
+            box-shadow:inset 0 0 0 2000px rgba(26, 14, 19, 0.2);
+            background-size: cover;
+          }        
+      </style>
  </head>
  <body>
     
@@ -33,18 +41,22 @@
                  -->
         </form>
     </div>
-    <!-- <style type="text/css">
-        body {          
-            min-height: 100%;
-            background: url("{{ url_for('static', filename='images/netflix-background-9.jpg') }}") no-repeat center center;
-            box-shadow:inset 0 0 0 2000px rgba(19, 13, 16, 0.7);
-            background-size: cover;
-          }        
-      </style> -->
-    <!-- {% for row in output %}
-    <div class="output">
-        {{print(row)}}
-    </div>
-    {% endfor %} -->
+    
+    {% block content %}
+        <div>
+            {% for datas in data %}
+                <div class="output">
+                    <!-- <img src="{{ datas['backdrop_path'] }}"  width="500" height="600"> -->
+                    <img src="http://image.tmdb.org/t/p/w500{{ datas['poster_path'] }}" width="100" height="100">
+                    <span>MOVIE_ID:{{ datas['id'] }}</span>
+                    <!-- <div>{{ datas['poster_path'] }}</div> -->
+                    <!-- <div>{{ datas['backdrop_path'] }}</div> -->
+                    <h2>{{ datas['original_title'] }}</h2>
+                     Description:
+                    <span>{{ datas['overview'] }}</span>>
+                </div>
+            {% endfor %}
+        </div>
+    {% endblock content %}
  </body>
  </html>
