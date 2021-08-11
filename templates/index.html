@@ -1,0 +1,50 @@
+ <!DOCTYPE html>
+ <html lang="en">
+    
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link rel= "stylesheet" type= "text/css" href= "/static/styles/style.css">
+ </head>
+ <body>
+    
+    <header>
+        <!-- Name of the webpage -->
+        <div class="head">
+            <h1><span style="color: orange">CINE</span>BUDD</h1>
+        </div>
+        <!-- NAVIGATION -->
+        <div class="nav">
+            <p>Your best <span style="color: orange;">BUDDY</span> to recommend Movies . . . .</p>
+        </div>
+        <!--    End of nav    -->
+    </header>
+    <hr style="color:orange; margin-left:11%; margin-right:10%;">
+    <div class="container">
+        <form action="/" method="POST">
+            <div >
+                    <label for="name">ENTER MOVIE</label>
+                    <input class="inp" type="text" class="form-control" id="name" name="name" placeholder="Enter Movie Name">
+                    <button class="btn" style="justify-content: center" type ="submit">SUBMIT</button>
+            </div>
+                <!-- <button class="btn" style="justify-content: center" type ="submit">SUBMIT</button>
+                 -->
+        </form>
+    </div>
+    <!-- <style type="text/css">
+        body {          
+            min-height: 100%;
+            background: url("{{ url_for('static', filename='images/netflix-background-9.jpg') }}") no-repeat center center;
+            box-shadow:inset 0 0 0 2000px rgba(19, 13, 16, 0.7);
+            background-size: cover;
+          }        
+      </style> -->
+    <!-- {% for row in output %}
+    <div class="output">
+        {{print(row)}}
+    </div>
+    {% endfor %} -->
+ </body>
+ </html>

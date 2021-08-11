@@ -1,0 +1,81 @@
+html{
+    min-height: 100%;
+    /* background: url("{{ url_for('static', filename='images/netflix-background-9.jpg') }}") */
+    background:url('/static/images/netflix-background-9.jpg')
+    no-repeat fixed;/*center center in between*/
+    box-shadow:inset 0 0 0 2000px rgba(19, 13, 16, 0.7);
+    background-size: cover;
+}
+body{
+    font-family: sans-serif;
+}
+
+header{
+    width: 90vw;
+    margin: auto;
+    overflow: hidden;
+    display:flex;
+    flex-wrap:initial
+}
+
+.head{
+    color:white;
+    font-size: 1.5rem;
+    /* 1rem = 16px */
+    word-spacing: 0.7rem;
+    float:left;
+    width: 30vw;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border-right: 3px solid coral; */
+}
+
+.nav{
+    float: right;
+    width: 60vw;
+    height: 5rem;
+    display: flex;
+    align-items:flex-end;
+    justify-content: left;
+    font-style:oblique;
+}
+
+
+p{
+    border-left: 3px solid coral;
+    line-height: 40px;
+    padding-bottom: 5px;;
+    font-weight: bold;
+    color: white;
+    font-size: 1rem;
+    padding-left:1.5rem;
+}
+
+.container{
+    color: white;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.inp{
+    width: 50vw;
+    height: 30px;
+}
+
+.btn{
+    border-radius: 5px;
+    background-color: orange;
+    color: white;
+    height: 30px;
+    width: 100px;
+    font-weight: bold;
+}
+
+.output{
+    height: 200px;
+}
